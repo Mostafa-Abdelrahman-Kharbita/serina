@@ -1,0 +1,105 @@
+ header {
+      color: #00b3b3;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 36px;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 18px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+    }
+
+    .content h2 {
+      color: #00b8b8;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+
+
+    /* Responsive Layout */
+
+/* iPhones and Small Mobiles */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  .content {
+    padding: 0 10px;
+  }
+
+  .content h2 {
+    font-size: 18px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Tablets (iPads) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  .content {
+    padding: 0 15px;
+  }
+
+  .search-bar input {
+    width: 80%;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+/* Laptops and Desktops */
+@media (min-width: 1025px) {
+  .content {
+    padding: 0 30px;
+  }
+
+  .search-bar input {
+    width: 300px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+}

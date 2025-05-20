@@ -1,0 +1,159 @@
+           /* Title */
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #007c7c;
+      font-size: 28px;
+    }
+
+    /* Product Cards Container */
+    .products-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 60px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-card .content {
+      padding: 20px;
+    }
+
+    .product-card h2 {
+      margin: 0 0 10px;
+      color: #00b8b8;
+      font-size: 20px;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+
+
+/* Responsive styles */
+
+/* tablet and ipad*/
+@media (max-width: 1024px) {
+  .products-container {
+    padding: 30px 40px;
+    gap: 20px;
+  }
+
+  .nav_div {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .search-bar input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+}
+
+/*medium phones*/
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .product-card {
+    width: 100%;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .nav_div {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-bar input {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* small phones*/
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .product-card h2 {
+    font-size: 18px;
+  }
+
+  .product-card p {
+    font-size: 13px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 15px 10px;
+  }
+
+  footer p {
+    margin: 5px 0;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .nav_div span {
+    font-size: 13px;
+    text-align: center;
+    display: block;
+  }
+}

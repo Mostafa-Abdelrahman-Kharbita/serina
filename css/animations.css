@@ -1,0 +1,402 @@
+/* Shared animations for all pages */
+
+/* Fade in animation for page elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Subtle float animation for items */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Subtle wave animation for headers */
+@keyframes wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Shimmer effect for highlights */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Gentle pulse for buttons */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Glow effect */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 179, 179, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 179, 179, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 179, 179, 0.5);
+  }
+}
+
+/* Nav bar animations */
+nav {
+  animation: fadeIn 1s ease-out;
+}
+
+nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+nav a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+nav a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.search-bar input {
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  transform: scale(1.02);
+}
+
+/* === INDEX PAGE ANIMATIONS === */
+
+/* Who's Sirena section */
+.who {
+  animation: fadeIn 1.5s ease-out;
+}
+
+.who h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.who h2:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #00b3b3;
+  transition: width 0.8s ease;
+}
+
+.who:hover h2:after {
+  width: 100%;
+}
+
+/* Product items animations */
+.item {
+  animation: fadeIn 0.8s ease-out;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+/* .item:hover {
+  animation: float 3s ease-in-out infinite;
+} */
+
+.item img {
+  transition: transform 0.5s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+.order-btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.order-btn:hover {
+  animation: pulse 1.2s infinite;
+  background-color: #007c7c;
+}
+
+.order-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.order-btn:hover:before {
+  left: 100%;
+}
+
+/* Price animation */
+.price {
+  transition: transform 0.3s ease;
+}
+
+.item:hover .price {
+  transform: translateY(-3px);
+}
+
+.new-price {
+  position: relative;
+  display: inline-block;
+}
+
+.new-price:after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #00b3b3;
+  transition: width 0.3s ease;
+}
+
+.item:hover .new-price:after {
+  width: 100%;
+}
+
+/* === ABOUT PAGE ANIMATIONS === */
+
+/* Header animations */
+header h1 {
+  animation: fadeIn 1.2s ease-out;
+  position: relative;
+}
+
+header h1:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00b3b3;
+  transition: width 1s ease;
+}
+
+header:hover h1:after {
+  width: 100px;
+}
+
+header p {
+  animation: fadeIn 1.5s ease-out;
+  transition: transform 0.5s ease;
+}
+
+header:hover p {
+  transform: translateY(3px);
+}
+
+/* Content section animations */
+.content h2 {
+  animation: fadeIn 2s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.content h2:hover {
+  transform: translateX(5px);
+}
+
+.content p {
+  animation: fadeIn 2.5s ease-out;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #00b3b3, #007c7c, #00b3b3);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* === PRODUCTS PAGE ANIMATIONS === */
+
+/* Title animation */
+h1 {
+  animation: fadeIn 1s ease-out;
+  position: relative;
+}
+
+h1:before, h1:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: -5px;
+  background-color: #00b3b3;
+  transition: width 0.5s ease;
+}
+
+h1:before {
+  left: 50%;
+}
+
+h1:after {
+  right: 50%;
+}
+
+h1:hover:before, h1:hover:after {
+  width: 50px;
+}
+
+/* Product cards animations */
+.product-card {
+  animation: fadeIn 1.5s ease-out;
+  transition: all 0.5s ease;
+}
+
+.pr
+
+.product-card img {
+  transition: all 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.03);
+}
+
+.product-card h2 {
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.product-card h2:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #00b8b8;
+  transition: width 0.5s ease;
+}
+
+.product-card:hover h2:after {
+  width: 100%;
+}
+
+.product-card p {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover p {
+  transform: translateY(2px);
+}
+
+/* Footer animations */
+footer {
+  animation: fadeIn 2s ease-out;
+}
+
+footer a {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+footer a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  background-color: #00bcd4;
+  transition: all 0.3s ease;
+}
+
+footer a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+/* Responsive animations adjustments */
+@media (max-width: 768px) {
+  .item, .product-card {
+    animation-duration: 0.5s;
+  }
+  
+  .float-animation {
+    animation: float 5s ease-in-out infinite;
+  }
+  
+  .item:hover, .product-card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Reduce animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .item:hover, .product-card:hover {
+    animation: none;
+    transform: none;
+  }
+}
